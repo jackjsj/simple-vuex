@@ -1,28 +1,22 @@
+<!-- app.vue -->
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <p>a module state aCount:{{$store.state.a.aCount}}</p>
+    <p>b module state bCount:{{$store.state.b.bCount}}</p>
+    <p>c module state cCount:{{$store.state.a.c.cCount}}</p>
+    <p>a module getter aCountPlusCount:{{$store.getters.aCountPlusCount}}</p>
+    <p>root module state count:{{$store.state.count}}</p>
+    <Child></Child>
   </div>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Child from '@/components/Child';
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    Child,
+  },
+  mounted() {
+  },
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
